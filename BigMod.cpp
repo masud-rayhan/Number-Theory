@@ -3,23 +3,18 @@
 
 using namespace std;
 
-
-
 int BigMod(int B,int P,int M){
     if(P==0){
         return 1;
     }
-
-
+    
     else if(P%2==1){
         int part1=B;
         int part2=BigMod(B,P-1,M);
 
         return ((part1%M)*(part2%M))%M;
     }
-
-
-
+    
     else if(P%2==0){
         int X=BigMod(B,P/2,M);
       //int Y=BigMod(B,P/2,M);        //WE CAN SKIP THIS LINE,CAUSE HERE X==Y
@@ -28,8 +23,6 @@ int BigMod(int B,int P,int M){
     }
 
 }
-
-
 
 
 int main()
